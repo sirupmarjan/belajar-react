@@ -1,11 +1,13 @@
-import React from 'react'
+import React, {Component} from 'react'
 import { Container, Navbar,NavDropdown,Nav} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import reactDom from 'react-dom';
 
-export default function Nar() {
-    return (
-        <div>
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" fixed="top">
+export default class Nar extends Component {
+    render() {
+        return (
+            <div>
+                <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" fixed="top">
             <Navbar.Brand href="#home">Alden Nasrun</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
@@ -28,6 +30,13 @@ export default function Nar() {
                     </Nav>
             </Navbar.Collapse>
         </Navbar>
-        </div>
-    )
+            </div>
+        )
+    }
 }
+
+reactDom.render(
+    <Nar/>,
+    document.getElementById('nav')
+);
+

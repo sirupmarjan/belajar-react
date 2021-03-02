@@ -1,3 +1,4 @@
+import { Toast } from 'bootstrap';
 import React, { Component } from 'react'
 import Navbar from './Navbar';
 
@@ -17,14 +18,25 @@ import Navbar from './Navbar';
         name : "Aldien"
       });
     }
-    
   }
+
+  ShowToast = () => {
+    <Toast>
+      <Toast.Header>
+        <img src="holder.js/20x20?text=%20" className="rounded mr-2" alt="pic"/>
+        <strong className="mr-auto">Alden</strong>
+        <small>11 mins ago</small>
+      </Toast.Header>
+      <Toast.Body>Hello, this is  a toast</Toast.Body>
+    </Toast>
+  }
+
 
   render() {
     return (
       <div>
         <p>hello {this.state.name}</p>
-        <button onClick={this.ChangeName}> Ubah Nama</button>
+        <button onClick={this.ShowToast}> Ubah Nama</button>
       <hr></hr>
       </div>
     );
@@ -46,10 +58,11 @@ class AppChat extends Component {
 }
 
 
-let chat = (
-  <div>
-        <Navbar/>
-        <App/>
+class Chat extends Component {
+  render() {
+    return (
+      <div>
+                <App/>
   <AppChat sender="dian" content="Hi, Apa kabar?" />
   <AppChat sender="petanikode" content="Kabar Baik" />
   <AppChat sender="dian" content="Hi, Apa kabar?" />
@@ -63,6 +76,9 @@ let chat = (
   <AppChat sender="dian" content="Hi, Apa kabar?" />
   <AppChat sender="petanikode" content="Kabar Baik" />
  
-  </div>
-);
-export default chat;
+      </div>
+    )
+  }
+}
+
+export default Chat;
