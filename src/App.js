@@ -1,6 +1,11 @@
-import { Toast } from 'bootstrap';
-import React, { Component } from 'react'
-import Navbar from './Navbar';
+import { Toast , Row, Col, Button, Alert } from 'bootstrap';
+import React, { Component, useState } from 'react'
+import { Container, Navbar } from 'react-bootstrap';
+import { NavLink,HashRouter, Route } from 'react-router-dom';
+import Nar from './Navbar';
+import Home from './home';
+import Tour from './tour';
+import Misi from './misi';
 
  class App extends Component {
   constructor(){
@@ -20,28 +25,39 @@ import Navbar from './Navbar';
     }
   }
 
-  ShowToast = () => {
-    <Toast>
-      <Toast.Header>
-        <img src="holder.js/20x20?text=%20" className="rounded mr-2" alt="pic"/>
-        <strong className="mr-auto">Alden</strong>
-        <small>11 mins ago</small>
-      </Toast.Header>
-      <Toast.Body>Hello, this is  a toast</Toast.Body>
-    </Toast>
-  }
-
 
   render() {
     return (
       <div>
         <p>hello {this.state.name}</p>
-        <button onClick={this.ShowToast}> Ubah Nama</button>
+        <button onClick={this.ChangeName}> Ubah Nama</button>
       <hr></hr>
       </div>
     );
   }
 }
+
+class TheHeader extends Component{
+render(){
+  return(
+      <div >
+        <HashRouter>
+        <Navbar bg="dark">
+          <h5 className="text-white">WRLD</h5>
+        </Navbar>
+        <div className="mx-2 my2">
+          <ul>
+            <li><NavLink to="/aku">Aku</NavLink></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+        </HashRouter>
+      </div>
+  );
+}
+}
+
 
 
 class AppChat extends Component {
@@ -62,20 +78,17 @@ class Chat extends Component {
   render() {
     return (
       <div>
-                <App/>
-  <AppChat sender="dian" content="Hi, Apa kabar?" />
-  <AppChat sender="petanikode" content="Kabar Baik" />
-  <AppChat sender="dian" content="Hi, Apa kabar?" />
-  <AppChat sender="petanikode" content="Kabar Baik" />
-  <AppChat sender="dian" content="Hi, Apa kabar?" />
-  <AppChat sender="petanikode" content="Kabar Baik" />
-  <AppChat sender="dian" content="Hi, Apa kabar?" />
-  <AppChat sender="petanikode" content="Kabar Baik" />
-  <AppChat sender="dian" content="Hi, Apa kabar?" />
-  <AppChat sender="petanikode" content="Kabar Baik" />
-  <AppChat sender="dian" content="Hi, Apa kabar?" />
-  <AppChat sender="petanikode" content="Kabar Baik" />
- 
+
+        <HashRouter>
+        <Nar/>
+        <Container>
+        <div className="content">
+          <Route exact path="/" component={Home}/>
+          <Route  path="/tour" component={Tour}/>
+          <Route  path="/misi" component={Misi}/>
+        </div>
+        </Container>
+        </HashRouter>
       </div>
     )
   }
