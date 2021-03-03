@@ -1,8 +1,8 @@
 import React,{Component} from 'react'
 import { Jumbotron } from 'react-bootstrap'
 import MediaQuery from 'react-responsive'
-import CardList from './CardList';
-import {stockData} from "./data"
+import CardList from '../CardList';
+import {stockData} from "../data"
 
 var fruits = ["Apple", "Banana"];
 class Home extends Component{
