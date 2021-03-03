@@ -6,6 +6,8 @@ import Nar from './Navbar';
 import Home from './home';
 import Tour from './tour';
 import Misi from './misi';
+import Title1 from './Title1';
+import Title2 from './Title2';
 
 
  class App extends Component {
@@ -87,6 +89,8 @@ class Chat extends Component {
           <Route exact path="/" component={Home}/>
           <Route  path="/tour" component={Tour}/>
           <Route  path="/misi" component={Misi}/>
+          <Route  path="/title1" component={Title1}/>
+          <Route  path="/title2" component={Title2}/>
         </div>
         </Container>
         </HashRouter>

@@ -8,10 +8,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import reactDom from 'react-dom';
 import MediaQuery, {useMediaQuery} from 'react-responsive';
 
+function backPage() {
+    window.history.back();
+}
 
 export default class Nar extends Component {
-
-    
+   
     render() {
         return (
             <div>
@@ -20,7 +22,7 @@ export default class Nar extends Component {
                  <MediaQuery maxWidth={1224} >
                         <Navbar bg="dark" variant="dark" fixed="top">
                             <Nav className="w-100">
-                        <Nav.Link href="#Tour" className="mr-auto"> back</Nav.Link>       
+                        <Nav.Link  className="mr-auto" onClick={backPage}> back</Nav.Link>       
                         <Navbar.Brand href="#/" className="mx-auto">Alden</Navbar.Brand>                
                         <Nav.Link href="#Misi" className="ml-auto">next</Nav.Link>       
                             </Nav>

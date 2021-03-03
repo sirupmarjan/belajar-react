@@ -20,7 +20,9 @@ class Home extends Component{
           {/* //populate data */}
          {stockData.map((data,key) =>{
              return(
-                 <CardList title={data.title} subtitle={data.subtitle} text={data.text}/>
+                <div key={key}>
+                 <CardList title={data.title} subtitle={data.subtitle} text={data.text} link={data.link}/>
+                </div>
              );
          })}
       </MediaQuery>
