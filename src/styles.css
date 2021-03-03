@@ -1,10 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 
 body {
+  padding: 0 5%;
   font-family: 'Poppins', sans-serif;
   background-color: #fcfcfc;
 }
 
+a{
+  color: black;
+  text-decoration: none;
+}
 .chat-area, .home {
   margin-top: 60px;
 }
@@ -43,12 +48,28 @@ body {
 }
 
 .btn {
-  margin-top: 10px;
+  margin: 10px 5px 5px 0;
+  background-color: #2e7d32;
+  border-radius: 8px;
+  border: none;
 }
 
 .btn-submit {
+  padding: 1em 2em;
   background-color: #2e7d32;
   color: white;
+}
+.btn-primary {
+  padding: 1em 2em;
+  background-color: #2484df;
+  color: white;
+}
+
+.navbar-brand{
+  text-decoration: none;
+  color: black;
+  font-size: 2em;
+
 }
 
 @media screen and (max-width: 767px) {

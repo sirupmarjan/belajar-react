@@ -57,10 +57,7 @@ export default class Login extends Component {
           onSubmit={this.handleSubmit}
         >
           <h1>
-            Login to
-            <Link className="title ml-2" to="/">
-              Chatty
-            </Link>
+            Login to Chtyouth
           </h1>
           <p className="lead">
             Fill in the form below to login to your account.
@@ -92,10 +89,10 @@ export default class Login extends Component {
             <button className="btn btn-primary px-5" type="submit">Login</button>
           </div>
           <p>You can also log in with any of these services</p>
-          <button className="btn btn-danger mr-2" type="button" onClick={this.googleSignIn}>
+          <button className="btn btn-primary mr-2" type="button" onClick={this.googleSignIn}>
             Sign in with Google
           </button>
-          <button className="btn btn-secondary" type="button" onClick={this.githubSignIn}>
+          <button className="btn btn-primary" type="button" onClick={this.githubSignIn}>
             Sign in with GitHub
           </button>
           <hr />
