@@ -7,6 +7,7 @@ import Home from './home';
 import Tour from './tour';
 import Misi from './misi';
 
+
  class App extends Component {
   constructor(){
     super();

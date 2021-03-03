@@ -1,15 +1,68 @@
-import React from 'react'
+import React,{Component} from 'react'
 import { Jumbotron } from 'react-bootstrap'
+import MediaQuery from 'react-responsive'
+import CardList from './CardList';
+import {stockData} from "./data"
 
-export default function home() {
-    return (
-        <div>
-            <Jumbotron>
-                <h4>Identitas</h4>
-                <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error facilis repudiandae accusamus delectus eligendi at aperiam quos, optio quia ullam porro id ab nostrum debitis minima fuga necessitatibus voluptas cumque, et voluptatem velit in doloremque dolorum. Consequuntur, atque! Expedita veniam, quas incidunt vel neque obcaecati eius. Nostrum alias laudantium voluptas velit debitis suscipit, nulla vel temporibus nemo facere repellendus. A aliquam totam mollitia suscipit voluptatibus soluta optio molestiae, neque ex earum eos itaque beatae? Praesentium nobis, fugiat, iusto unde quaerat suscipit deleniti ab sequi quis iure alias amet cumque accusantium.
-                </p>
-            </Jumbotron>
-        </div>
-    )
+var fruits = ["Apple", "Banana"];
+class Home extends Component{
+    render(){
+        return(
+            <div>
+      <h1>Device Test!</h1>
+      <MediaQuery minWidth={1224}>
+        <p>You are a desktop or laptop</p>
+        <MediaQuery minWidth={1824}>
+          <p>You also have a huge screen</p>
+        </MediaQuery>
+      </MediaQuery>
+      <MediaQuery maxWidth={1224}>
+          {/* //populate data */}
+         {stockData.map((data,key) =>{
+             return(
+                 <CardList title={data.title} subtitle={data.subtitle} text={data.text}/>
+             );
+         })}
+      </MediaQuery>
+      <MediaQuery minResolution="2dppx">
+        {/* You can also use a function (render prop) as a child */}
+        {(matches) =>
+          matches
+            ? <p>You are retina</p>
+            : <p>You are not retina</p>
+        }
+      </MediaQuery>
+    </div>
+        );
+    }
 }
+
+
+
+const Example = () => (
+    <div>
+      <h1>Device Test!</h1>
+      <MediaQuery minWidth={1224}>
+        <p>You are a desktop or laptop</p>
+        <MediaQuery minWidth={1824}>
+          <p>You also have a huge screen</p>
+        </MediaQuery>
+      </MediaQuery>
+      <MediaQuery maxWidth={1224}>
+          <p>You are on Tabler or phone</p>
+      </MediaQuery>
+      <MediaQuery minResolution="2dppx">
+        {/* You can also use a function (render prop) as a child */}
+        {(matches) =>
+          matches
+            ? <p>You are retina</p>
+            : <p>You are not retina</p>
+        }
+      </MediaQuery>
+    </div>
+  )
+
+
+
+export default Home;
+
